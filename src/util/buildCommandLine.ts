@@ -1,4 +1,4 @@
-import CommandOptions from '@z-terminal/interface/CommandOptions';
+import CommandOptions from '../interface/CommandOptions';
 
 function buildCommandLine(command: string, options?: CommandOptions) {
   let result;

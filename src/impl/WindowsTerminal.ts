@@ -1,11 +1,11 @@
 import { Terminal } from '../index';
 import { spawn, ChildProcess } from 'child_process';
 import { Readable } from 'stream';
-import TerminalInitializationError from '@z-terminal/exception/TerminalnitializationError';
-import CaptureDisabledError from '@z-terminal/exception/CaptureDisabledError';
-import OpenTerminalOptions from '@z-terminal/interface/OpenTerminalOptions';
-import CommandOptions from '@z-terminal/interface/CommandOptions';
-import buildCommandLine from '@z-terminal/util/buildCommandLine';
+import TerminalInitializationError from '../exception/TerminalnitializationError';
+import CaptureDisabledError from '../exception/CaptureDisabledError';
+import OpenTerminalOptions from '../interface/OpenTerminalOptions';
+import CommandOptions from '../interface/CommandOptions';
+import buildCommandLine from '../util/buildCommandLine';
 
 class WindowsTerminal implements Terminal {
   childProcess: ChildProcess;

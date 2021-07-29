@@ -1,5 +1,5 @@
-import RunCommandOptions from '@z-terminal/interface/RunCommandOptions';
-import RunCommandResult from '@z-terminal/interface/RunCommandResult';
+import RunCommandOptions from '../interface/RunCommandOptions';
+import RunCommandResult from '../interface/RunCommandResult';
 import openTerminal from './openTerminal';
 
 async function runCommand(command: string, options?: RunCommandOptions): Promise<RunCommandResult> {
