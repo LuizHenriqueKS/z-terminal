@@ -21,8 +21,8 @@ interface Terminal {
 
   runCommand(command: string, options?: CommandOptions): Terminal;
 
-  get stdout(): Readable;
-  get stderr(): Readable;
+  get stdout(): Readable | null;
+  get stderr(): Readable | null;
 
 }
 

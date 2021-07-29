@@ -102,12 +102,12 @@ class WindowsTerminal implements Terminal {
     return this;
   }
 
-  get stdout(): Readable {
-    return this.stdout;
+  get stdout(): Readable | null {
+    return this.childProcess.stdout;
   }
 
-  get stderr(): Readable {
-    return this.stderr;
+  get stderr(): Readable | null {
+    return this.childProcess.stderr;
   }
 }
 

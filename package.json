@@ -1,6 +1,6 @@
 {
   "name": "z-terminal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Open terminal e run commands",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
