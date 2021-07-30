@@ -23,7 +23,13 @@ function isEscapeActivated(options?: CommandOptions): boolean {
 function buildArgsLine(options?: CommandOptions) {
   if (options?.args !== undefined) {
     if (isEscapeActivated(options)) {
-      return options.args.map(a => `"${a}"`).join(' ');
+      return options.args.map(a => {
+        if (a.includes(' ')) {
+          return `"${a}"`;
+        } else {
+          return a;
+        }
+      }).join(' ');
     } else {
       return options.args.join(' ');
     }
