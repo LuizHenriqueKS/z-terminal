@@ -15,7 +15,7 @@ class LinuxTerminal implements Terminal {
   _captureErrorEnabled: boolean;
 
   constructor(options?: OpenTerminalOptions) {
-    this.childProcess = spawn(options?.executable || 'sh');
+    this.childProcess = spawn(options?.executable || 'bash');
     if (!this.childProcess) throw new TerminalInitializationError();
     this._output = '';
     this._error = '';
@@ -98,7 +98,7 @@ class LinuxTerminal implements Terminal {
   }
 
   sendLine(line: string): Terminal {
-    this.send(line + '\r\n');
+    this.send(line + '\n');
     return this;
   }
 

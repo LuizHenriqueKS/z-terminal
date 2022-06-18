@@ -7,7 +7,7 @@ function openTerminal(options?: OpenTerminalOptions): Terminal {
   if (process.platform === 'win32') {
     return new WindowsTerminal(options);
   } else {
-    return new LinuxTerminal();
+    return new LinuxTerminal(options);
   }
 }
 

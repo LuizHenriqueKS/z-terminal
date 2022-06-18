@@ -27,6 +27,7 @@ async function runCommand(command: string, options?: RunCommandOptions): Promise
     await terminal.waitForExit();
     clearInterval(interval);
   } else {
+    terminal.exit();
     await terminal.waitForExit();
   }
   return {
