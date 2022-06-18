@@ -5,6 +5,8 @@ interface RunCommandOptions {
   commandArgs?: string[];
   terminalArgs?: string[];
   escape?: boolean;
+  repeatExitEachMiliseconds?: number;
+  pipeOnProcess?: boolean
 
 }
 

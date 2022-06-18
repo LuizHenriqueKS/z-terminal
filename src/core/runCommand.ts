@@ -8,14 +8,27 @@ async function runCommand(command: string, options?: RunCommandOptions): Promise
     cwd: options?.cwd,
     args: options?.terminalArgs
   });
+  if (options?.pipeOnProcess) {
+    terminal.pipeOnProcess();
+  }
   terminal.captureOutput();
   terminal.captureError();
+  if (options?.cwd) {
+    terminal.runCommand('cd', { args: [options.cwd] });
+  }
   terminal.runCommand(command, {
     escape: options?.escape,
     args: options?.commandArgs
   });
-  terminal.exit();
-  await terminal.waitForExit();
+  if (options?.repeatExitEachMiliseconds) {
+    const interval = setInterval(() => {
+      terminal.exit();
+    }, options.repeatExitEachMiliseconds);
+    await terminal.waitForExit();
+    clearInterval(interval);
+  } else {
+    await terminal.waitForExit();
+  }
   return {
     output() {
       return terminal.output();
